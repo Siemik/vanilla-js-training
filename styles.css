@@ -24,3 +24,6 @@ body {
   max-width: 600px;
   background-color: #e87878;
 }
+.task-content {
+  display: inline;
+} 
