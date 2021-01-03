@@ -4,26 +4,95 @@ body {
 }
 .conteiner {
   height: 100vh;
-  width: 100vh;
-  background-color: #E5E5F7;
-  /* opacity: 0.3; */
-  background-image:  radial-gradient(#e87878 1.2000000000000002px, transparent 1.2000000000000002px), radial-gradient(#e87878 1.2000000000000002px, #E5E5F7 1.2000000000000002px);
-  background-size: 48px 48px;
-  background-position: 0 0,24px 24px;
+  /* width: 100vh; */
+  background-color: #fbfbfb;
+  background-image: radial-gradient(#dbb8b8 1px, transparent 1px), radial-gradient(#dbb8b8 1px, #f2f2f2 1px);
+  background-size: 40px 40px;
+  background-position: 0 0,20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.add-task {
-  max-width: 400px ;
-  background-color: aqua;
-  /* display: ; */
-}
 .content {
-  max-width: 600px;
-  background-color: #e87878;
+  font-family: 'Handlee', cursive;
+  line-height: 43px;
+  padding-top: 5px;
+  background-color: #fbfbfb;
+  opacity: 1;
+  background-size: 44px 44px;
+  background-image:  repeating-linear-gradient(0deg, #dbdbb8, #dbdbb8 2.2px, #fbfbfb 2.2px, #fbfbfb);
+  font-size: 29px;
+  max-width: 900px;
+  box-shadow: 2px 2px 15px #dadada;
+  border-radius: 5px;
+  color: #686868;
+}
+#list-of-task {
+  margin: 10px 30px 10px 20px;
+  position: relative;
+  list-style-type:none;
+  padding-right: 50px;
+}
+.remove-button, .toggle-status-todo, .toggle-status-done, .add-task-button{
+  background: none;
+  border: none;
+  position: absolute;
+}
+.toggle-status-todo, .toggle-status-done{
+  opacity: 0.4;
+  font-size: 20px;
+  left: 0;
+}
+.toggle-status-done{
+  opacity: 0.9;
+}
+.toggle-status-todo:hover{
+  opacity: 0.6;
+  transition-duration: 0.2s;
+}
+.remove-button{
+  font-size: 15px;
+  right: 0;
+  opacity: 0.6;
+}
+.remove-button:hover {
+  opacity: 1;
+  transition-duration: 0.5s;
 }
 .task-content {
   display: inline;
 } 
+.add-task {
+  max-width: 900px ;
+  margin: 12px;
+  padding-left: 25px;
+  /* display: none; */
+}
+#add-input {
+  border: none;
+  height: 23px;
+  width: 250px;
+  font-family: 'Handlee', cursive;
+  font-size: 18px;
+  background-color: #fbfbfb;
+  box-shadow: 2px 2px 5px #dadada;
+  border-radius: 5px;
+}
+#add-task-button {
+  opacity: 0.7;
+  background: none;
+  border: none;
+}
+#add-task-button:hover{
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+input, button { 
+  outline: none;
+}
+
+/*Dont know if I want that option*/
+#toggle-all-button {
+  display: none;
+}

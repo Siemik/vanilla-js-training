@@ -61,21 +61,21 @@
         toggleButton.id="toggle-btn-"+i
 
         if (list[i].complete) {
-          toggleStatus = "<button id=toogle-"+i+">✔️</button>"
+          toggleStatus = "<button class=toggle-status-done id=toggle-"+i+">✔️</button>"
           taskContent = "<p class=task-content id=task-content-"+i+">"+list[i].task+"</p>"
           console.log(toggleStatus + taskContent);
           li.innerHTML = toggleStatus + taskContent;
-          positionToggle="toogle-"+i
+          positionToggle="toggle-"+i
           positionEdit= "task-content-"+i
           document.getElementById(positionToggle).addEventListener('click', toggle)  
           document.getElementById(positionEdit).addEventListener('dblclick', edit)
         } 
         else {
-          toggleStatus = "<button id=toogle-"+i+">⬜</button>"
+          toggleStatus = "<button class=toggle-status-todo id=toggle-"+i+">⬜</button>"
           taskContent = "<p class=task-content id=task-content-"+i+">"+list[i].task+"</p>"
           console.log(toggleStatus + taskContent);
           li.innerHTML = toggleStatus + taskContent;
-          positionToggle="toogle-"+i
+          positionToggle="toggle-"+i
           positionEdit= "task-content-"+i
           document.getElementById(positionToggle).addEventListener('click', toggle)  
           document.getElementById(positionEdit).addEventListener('dblclick', edit) 
@@ -83,6 +83,7 @@
 
         var removeButton = document.createElement("button")
         removeButton.id="remove-btn-"+i
+        removeButton.className="remove-button"
         removeButton.innerText="🗑️"
         li.appendChild(removeButton)
 
