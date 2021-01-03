@@ -30,10 +30,7 @@
     }
     
     function toggle(event) {
-      //wybieramy metode split, ponieważ łatwo będzie to zaimplentowac do innych funkcji
-      //lub jeśli będziemy chcieli zmienić nazwe ID 
-      //Można to zrobić na wiele mentod. Sztos 🔥🔥🔥
-      position= event.currentTarget.id.split('-')[2]
+      position= event.currentTarget.id.split('-')[1]
 
       if (list[position].complete) {
         list[position].complete = false;
@@ -59,21 +56,23 @@
       for (i=0 ; i < list.length ; i++) {
         var li = document.createElement("li");
         ulTask.appendChild(li)
-        if (list[i].complete) {
-          li.innerText = "✔️" + list[i].task;
-        } 
-        else {
-          li.innerText = "⬜" + list[i].task;
-        }
-
 
         var toggleButton = document.createElement("button")
         toggleButton.id="toggle-btn-"+i
-        toggleButton.innerText="🗹"
-        li.appendChild(toggleButton)
 
-        toggleButton.addEventListener('click', toggle)
-        
+        if (list[i].complete) {
+          test = "<button id=toogle-"+i+">✔️</button>"
+          li.innerHTML = test + list[i].task;
+          position="toogle-"+i
+          document.getElementById(position).addEventListener('click', toggle)  
+        } 
+        else {
+          test = "<button id=toogle-"+i+">⬜</button>"
+          li.innerHTML = test + list[i].task;
+          position="toogle-"+i
+          document.getElementById(position).addEventListener('click', toggle)  
+        }
+
         var editButton = document.createElement("button")
         editButton.id="edit-btn-"+i
         editButton.innerText="✏️"
