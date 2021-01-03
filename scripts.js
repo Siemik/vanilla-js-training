@@ -61,14 +61,14 @@
         toggleButton.id="toggle-btn-"+i
 
         if (list[i].complete) {
-          test = "<button id=toogle-"+i+">✔️</button>"
-          li.innerHTML = test + list[i].task;
+          toggleStatus = "<button id=toogle-"+i+">✔️</button>"
+          li.innerHTML = toggleStatus + list[i].task;
           position="toogle-"+i
           document.getElementById(position).addEventListener('click', toggle)  
         } 
         else {
-          test = "<button id=toogle-"+i+">⬜</button>"
-          li.innerHTML = test + list[i].task;
+          toggleStatus = "<button id=toogle-"+i+">⬜</button>"
+          li.innerHTML = toggleStatus + list[i].task;
           position="toogle-"+i
           document.getElementById(position).addEventListener('click', toggle)  
         }
